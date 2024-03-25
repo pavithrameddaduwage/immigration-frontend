@@ -1,0 +1,1052 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;900&display=swap');
+
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.header {
+background:#fff;
+padding: 15px 20px;
+width:100%;
+position:fixed;
+top:0;
+left:0;
+z-index:9;
+}
+
+.header .header_in img{
+    margin-bottom: -11px;
+    margin-left: 10px;
+}
+
+.header .header_in .profileImage{
+    float: right;
+    width: 40px;
+    margin-right: 50px;
+}
+
+button {
+    background:transparent;
+    border:none;
+    width:30px;
+    height:30px;
+    cursor:pointer; 
+    outline:0;
+}
+
+select{
+    padding-left: 15px;
+    padding-right: 10px;
+    color: #424345;
+    background: #EFEFEF;
+    font-weight: 700;
+    border-radius: 11px;
+    border: none;
+    border-right: 10px solid transparent;
+    height: 41px;
+    margin: 10px;
+}
+
+.toggle span {
+    width:100%;
+    height:3px;
+    background:#005EE9;
+    display:block;
+    position:relative;
+    cursor:pointer;
+}
+
+.toggle span:before,
+.toggle span:after {
+    content:'';
+    position:absolute;
+    left:0;
+    width:100%;
+    height:100%;
+    background:#005EE9;
+    transition: all 0.3s ease-out;
+}
+
+.toggle span:before {
+    top:-8px;
+}
+
+.toggle span:after {
+    top:8px;
+}
+
+.toggle span.toggle {
+    background:transparent;
+}
+
+.toggle span.toggle:before {
+    top:0;
+    transform:rotate(-45deg);
+    background:#005EE9;
+
+}
+
+.toggle span.toggle:after {
+    top:0;
+    transform:rotate(45deg);
+    background:#005EE9;
+}
+
+.sidebar {
+    background:#fff;
+    width:235px;
+    position:fixed;
+    top:0;
+    left:-235px;
+    height:100%;
+    padding-top:90px;
+    transition:all 0.3s ease-out;
+    z-index: 1;
+}
+
+.sidebar ul {
+    list-style:none;
+    padding-left: 0px;
+}
+
+.sidebar ul li {
+    display:block;
+}
+
+.sidebar ul li a {
+    padding:8px 15px;
+    font-style: normal;
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 39px;
+    color:#005EE9;
+    text-decoration:none;
+    display:block;
+    position:relative;
+    z-index:1;
+    transition:all 0.3s ease-out;
+    font-weight:500;
+}
+
+.sidebar ul li a:before {
+    content:'';
+    position:absolute;
+    bottom:0;
+    left:50%;
+    right:50%;
+    transform:translate(-50%,-50%);
+    width:0;
+    height:1px;
+    background:#4CAF50;
+    z-index:-1;
+    transition:all 0.3s ease-out;
+}
+
+.sidebar ul li a:hover:before {
+    width:50%;
+}
+
+.sidebar ul li a:hover {
+    color:#4CAF50;
+}
+
+.sidebarshow {
+    left:0;
+}
+
+.main{
+    margin-top: 70px;
+    margin-bottom: 55px;
+}
+
+.main .paraMain{
+    color: #359D9E;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0;
+}
+
+
+.cardSet{
+    display: flex;
+    /* flex-flow: row wrap; */
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cardSet .singleCard{
+    box-sizing: border-box;
+    width: 340px;
+    background: #EFEFEF;
+    border: none;
+    margin-bottom: 30px;
+}
+
+.cardSet .singleCard{
+    border-radius: 11px;
+    box-sizing: border-box;
+    background: #EFEFEF;
+    border: none;
+    margin-bottom: 30px;
+    padding: 20px 30px 20px 30px;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+.cardSet .singleCard .visa{
+    color: #1E4A6C;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 0px;
+}
+
+.cardSet .singleCard .registrations{
+    color: #1E4A6C;
+    font-family: Poppins;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 0px;
+}
+
+.cardSet .singleCard .count{
+    color: #359D9E;
+    font-family: Poppins;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.cardSet .singleCard .arrowShapeUp{
+    width: 0;
+    height: 0;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-bottom: 7px solid #359D9E;
+    float: right;
+}
+
+.cardSet .singleCard .arrowShapeDown{
+    width: 0; 
+    height: 0; 
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-top: 7px solid #FF3737;
+    float: right;
+}
+
+
+
+
+.cardSet .singleCard:hover{
+    background: #1E4A6C;
+}
+
+
+.cardSet .singleCard:hover *{
+    color: #FFFFFF;
+}
+
+.Jounery button{
+    width: 204px;
+    height: 43px;
+    border-radius: 27px;
+    background: #1E4A6C;
+    margin-top: 15px;
+    color: #FFF;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.Jounery button:hover{
+    background: #FFFFFF;
+    color: #1E4A6C;
+    border: 1px solid #1E4A6C;
+}
+
+.carouselSection{
+    margin-top: 45px;
+}
+
+.carouselSection img{
+    padding: 0px 10px 0px 10px;
+}
+
+.bottomText{
+    margin-top: 100px;
+}
+
+
+
+/* Registrations page */
+.searchBox{
+    margin-bottom: 50px;
+    width: 310px;
+    background: #EFEFEF;
+    border-radius: 11px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.searchBox input{
+    border-radius: 11px;
+    background: #EFEFEF;
+    border: none;
+    width: 249px;
+    height: 41px;
+    padding-left: 15px;
+}
+
+.searchBox button{
+    margin-top: 10px;
+}
+
+.searchBox img{
+    width: 16.5px;
+    height: 16px;
+    /* margin: auto; */
+}
+
+::placeholder {
+    color: #C6C6C6;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+input:focus,
+select:focus,
+option:focus,
+textarea:focus, 
+textarea.form-control:focus, 
+input.form-control:focus, 
+input[type=text]:focus, 
+input[type=email]:focus, 
+input[type=number]:focus, 
+[type=text].form-control:focus, 
+[type=email].form-control:focus, 
+[type=tel].form-control:focus, 
+[contenteditable].form-control:focus {
+    outline: none;
+    color: #767676;
+    font-weight: 700;
+    font-size: 13px;
+}
+
+.allClients{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.allClients a{
+    text-decoration: none;
+}
+
+.allClients .singleData{
+margin: 0px 10px 10px 10px;
+}
+
+.allClients .singleData .DateTime{
+    color: #424345;
+    font-family: Poppins;
+    font-size: 9px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.allClients .singleData .clientBox{
+    width: 301px;
+    border-radius: 11px;
+    background: #EFEFEF;
+    padding: 21px;
+}
+
+.allClients .singleData .clientBox .clientName{
+    color: #1E4A6C;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.allClients .singleData .clientBox .clientVisaType{
+    color: #1E4A6C;
+    font-family: Poppins;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.allClients .singleData .clientBox:hover{
+    background: #1E4A6C;
+}
+
+.allClients .singleData .clientBox:hover .clientName{
+    color: #FFFFFF;
+}
+
+.allClients .singleData .clientBox:hover .clientVisaType{
+    color: #FFFFFF;
+}
+
+
+
+
+
+/* Edit Client Info */
+.editClientBg{
+    border-radius: 24px;
+    background: #D9D9D9;
+    width: 836px;
+    height: 376px;
+    flex-shrink: 0;
+    margin-left: auto;
+    margin-right: auto;
+
+    padding-top: 49px;
+}
+
+.editClientBg .formCenter{
+    text-align: center;
+}
+
+.editClientBg .editInput{
+    width: 263px;
+    height: 41px;
+    flex-shrink: 0;
+    border-radius: 11px;
+    background: #EFEFEF;
+    border: none;
+    margin: 10px;
+    padding: 0px 10px 0px 10px;
+}
+
+.editClientBg select{
+    width: 283px;
+}
+
+.editClientBg .editAddress{
+    width: 571px;
+    height: 41px;
+    flex-shrink: 0;
+    border-radius: 11px;
+    background: #EFEFEF;
+    border: none;
+    margin: 10px;
+    padding: 0px 10px 0px 10px;
+}
+
+.editClientBg button{
+    border-radius: 27px;
+    background: #1E4A6C;
+    width: 204px;
+    height: 43px;
+    margin-top: 29px;
+    flex-shrink: 0;
+    color: #FFF;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+/* All Payments */
+.paymentTable{
+    border-radius: 24px;
+    background: #EFEFEF;
+
+    width: 1000px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    padding: 49px 10px 10px 10px;
+}
+
+.paymentTable .tableBg{
+    overflow-x:auto;
+}
+
+.paymentTable .tableBg th{
+    color: #1E4A6C;
+}
+
+
+.paymentTable .tableBg a{
+    text-decoration: none;
+    border: 1px solid #359D9E;
+    border-radius: 24px;
+    padding: 1px 10px 1px 10px;
+    color: #359D9E;
+}
+
+.paymentTable .tableBg a:hover{
+    border: none;
+    background: #359D9E;
+    color: #EFEFEF;
+}
+
+/* Payment History */
+.paymentHistoryBg .paymentHistoryCenter{
+    border-radius: 24px;
+    background: #EFEFEF;
+    width: 695px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 62px 54px 65px 54px;
+}
+
+.paymentHistoryBg .paymentHistoryCenter .paymentHistoryFlex{
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-between;
+}
+
+.paymentHistoryBg .paymentHistoryCenter .paymentHistoryClientName{
+    color: #1E4A6C;
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.paymentHistoryBg .paymentHistoryCenter .paymentHistoryBgColor{
+    width: auto;
+    border-radius: 40px;
+    background: #359D9E;
+    padding: 8px 14px 8px 14px;
+    margin-bottom: 14px;
+}
+
+.paymentHistoryBg .paymentHistoryCenter .paymentHistoryBgColor .invoice{
+    color: #FFFFFF;
+}
+
+ .paymentHistoryBg .paymentHistoryCenter .reSend{
+    border-radius: 27px;
+    background: #1E4A6C;
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 5px 50px 5px 50px;
+}
+
+.paymentHistoryBg .paymentHistoryCenter .reSend:hover {
+    color: #1E4A6C;
+    border: 1px solid #1E4A6C;
+    background: none;
+}
+
+
+.paymentHistoryBg .paymentHistoryCenter .viewInvoice, .editInvoice{
+    color: #424345;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration-line: underline;
+    padding: 5px 50px 5px 50px;
+    margin-right: 10px;
+
+    border-radius: 27px;
+    border: 1px solid #1E4A6C;
+}
+
+
+.paymentHistoryBg .paymentHistoryCenter .editInvoice:hover {
+    color: #FFFFFF;
+    background: #1E4A6C;
+}
+
+.paymentHistoryBg .paymentHistoryCenter .viewInvoice:hover {
+    color: #FFFFFF;
+    background: #1E4A6C;
+}
+
+/* Invoice Slip */
+.invoiceSlip{
+    width: 576px;
+    margin-left: auto;
+    margin-right: auto;
+    filter: drop-shadow(0px 17px 21px rgba(0, 0, 0, 0.25));
+}
+
+.invoiceSlip .blueBg{
+    border-radius: 11px 11px 0px 0px;
+    background: #1E4A6C;
+    padding: 20px;
+
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-between;
+}
+
+.invoiceSlip .blueBg .logoWhiteBg{
+    width: 175px;
+    height: 57px;
+    background-color: #FFFFFF;
+    border-radius: 40px;
+}
+
+.invoiceSlip .blueBg .logoWhiteBg img{
+    width: 152px;
+    padding: 10px;
+}
+
+
+.invoiceSlip .blueBg .invoiceText{
+    color: #FFF;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.invoiceSlip .invoiceDetails{
+    padding: 20px;
+    background: #FFF;
+    border-radius: 0px 0px 11px 11px;
+}
+
+.invoiceSlip .invoiceFlex{
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-between;
+}
+
+.invoiceSlip .invoiceFlex .invoiceLeft{
+    color: #1E4A6C;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.invoiceSlip .invoiceFlex .invoiceRight{
+    color: #1E4A6C;
+    text-align: right;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+/* Edit Payment */
+.editPayment{
+    border-radius: 24px;
+    background: #D9D9D9;
+    width: 836px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 49px;
+}
+
+.editPayment .formCenter{
+    padding-left: 55px;
+}
+
+.editPayment .formCenter input{
+    height: 41px;
+    border-radius: 11px;
+    background: #EFEFEF;
+    border: none;
+    margin: 5px;
+    padding: 0px 10px 0px 10px;
+}
+
+.editPayment .formCenter .editPaymentFullNameInput{
+    width: 283px;
+}
+
+.editPayment .formCenter .editPaymentAmountInput{
+    width: 88px;
+}
+
+.editPayment .formCenter select{
+    padding: 0px 10px 0px 10px;
+    color: #C6C6C6;
+    background: #EFEFEF;
+    font-weight: 700;
+    border-radius: 11px;
+    border: none;
+    border-right: 10px solid transparent;
+    height: 41px;
+    margin: 5px;
+}
+
+.editPayment .formCenter .editPaymentCurrencyInput{
+    width: 115px;
+}
+
+.editPayment .formCenter .editPaymentCurrencyRateInput{
+    width: 125px;
+}
+
+.editPayment .formCenter .editPaymentServiceTitleInput{
+    width: 330px;
+}
+
+.editPayment .formCenter .editPaymentTelInput{
+    width: 330px;
+}
+
+.editPayment .formCenter .editPaymentIDPassportInput{
+    width: 330px;
+}
+
+.editPayment .formCenter .editPaymentClientAddressInput{
+    width: 330px;
+}
+
+.editPayment .formCenter .editPaymentDescriptionInput{
+    width: 696px;
+}
+
+.editPayment .formCenter .paidBox{
+    border-radius: 11px;
+    background: #EFEFEF;
+    padding: 9px 10px 9px 10px;
+}
+
+.editPayment .formCenter .paidBox label{
+    color: #C6C6C6;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.editPayment .formCenter .paidBox input{
+    height: auto;
+}
+
+.editPayment .formCenter button{
+    border-radius: 27px;
+    background: #1E4A6C;
+    width: 204px;
+    height: 43px;
+    margin-top: 29px;
+    flex-shrink: 0;
+    color: #FFF;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+ /* User Profile Page */
+.userProfileBg {
+    border-radius: 24px;
+    /* opacity: 0.17; */
+    background: #D9D9D9;
+    width: 836px;
+    height: 589px;
+    flex-shrink: 0;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 49px;
+}
+
+.userProfileBg .formCenter {
+    text-align: center;
+}
+
+.userProfileBg .userInput {
+    width: 48%;  
+    height: 86px;
+    border-radius: 11px;
+    background: #EFEFEF;
+    border: none;
+    margin: 15px;
+    padding: 0px 10px 0px 10px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;  
+    align-items: flex-start;  
+    justify-content: center;
+}
+
+.userInput p:first-child {
+    color: #C6C6C6;
+}
+
+.userInput p:last-child {
+    color: black;
+}
+.userInput p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.inputRow {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.userTitle{
+    margin-top: 29px;
+
+}
+
+.userProfileBg .Address {
+    width: 48%;
+    height: 86px;
+    flex-shrink: 0;
+    border-radius: 11px;
+    background: #EFEFEF;
+    border: none;
+    margin: 15px;
+    padding: 0px 10px 0px 10px;
+    text-align: left;  
+}
+
+.userProfileBg button {
+    border-radius: 27px;
+    width: 204px;
+    height: 43px;
+    margin-top: 29px;
+    flex-shrink: 0;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    opacity: 1;
+}
+
+.userProfileBg button.EditButton {
+    margin-top: 29px;
+    margin-right: 10px;
+    background: #1E4A6C;
+    color: #FFF;
+}
+.userInput {
+    display: block;
+    margin-bottom: 10px; 
+     
+}
+/* Success Page */
+.successCard {
+    border-radius: 24px;
+    background: #D9D9D9;
+    width: 836px;
+    height: 500px;
+    flex-shrink: 0;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 49px;
+    margin-top: 60px;
+}
+
+.card-container {
+    border-radius: 200px;
+    height: 200px;
+    width: 200px;
+    background: #f6faf5;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+.successCard i {
+    color: #0cf608;
+    font-size: 100px;
+    line-height: 200px;
+    margin-left: 53px;
+}
+
+.successCard .cardMain {
+    color: #359D9E;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 66px;
+    font-weight: 500;
+    margin: 0;
+}
+.card-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+/* Unsuccess Page */
+.failureCard {
+    border-radius: 24px;
+    background: #D9D9D9;
+    width: 836px;
+    height: 500px;
+    flex-shrink: 0;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 49px;
+    margin-top: 60px;
+}
+
+.failureCard .card-container {
+    border-radius: 200px;
+    height: 200px;
+    width: 200px;
+    background: #f6faf5;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+.failureCard i {
+    color: red;  
+    font-size: 100px;
+    line-height: 200px;
+    margin-left: 53px;
+}
+
+.failureCard .cardMain {
+    color: #359D9E;  
+    text-align: center;
+    font-family: Poppins;
+    font-size: 66px;
+    font-weight: 500;
+    margin: 0;
+}
+
+
+ 
+
+
+ 
+
+/* Mobile view width start at 376px*/
+
+@media (max-width: 900px) {
+
+    .Jounery button {
+        width: 280px;
+        height: 65px;
+        font-size: 22px;
+    }
+
+    .carouselSection{
+        width: 100%;
+    }
+
+    .carouselSection img{
+        width: 250px;
+    }
+
+    /* Edit Client Info */
+    .editClientBg{
+        width: auto;
+        height: auto;
+    }
+
+    .editClientBg .editAddress{
+        width: 263px;
+    }
+
+    /* All Payments */
+    .paymentTable{
+        width: auto;
+        padding: 49px 0px 50px 0px;
+    }
+
+    /* Payment History */
+    .paymentHistoryBg .paymentHistoryCenter {
+        width: auto;
+    }
+
+    .paymentHistoryBg .paymentHistoryCenter .marginSpace{
+        margin-bottom: 20px;
+    }
+
+    /* Invoice Slip */
+    .invoiceSlip{
+        width: auto;
+    }
+
+    /* Edit Payment */
+    .editPayment{
+        width: auto;
+    }
+
+    .editPayment .formCenter{
+        padding: 0;
+        text-align: center;
+    }
+
+    .editPayment .formCenter .editPaymentFullNameInput{
+        width: -webkit-fill-available;
+    }
+
+    .editPayment .formCenter .editPaymentAmountInput{
+        width: -webkit-fill-available;
+    }
+
+    .editPayment .formCenter .editPaymentCurrencyInput {
+        width: -webkit-fill-available;
+    }
+
+    .editPayment .formCenter .editPaymentCurrencyRateInput {
+        width: -webkit-fill-available;
+    }
+
+    .editPayment .formCenter .editPaymentServiceTitleInput {
+        width: -webkit-fill-available;
+    }
+
+    .editPayment .formCenter .editPaymentTelInput {
+        width: -webkit-fill-available;
+    }
+
+    .editPayment .formCenter .editPaymentIDPassportInput {
+        width: -webkit-fill-available;
+    }
+
+    .editPayment .formCenter .editPaymentClientAddressInput {
+        width: -webkit-fill-available;
+    }
+
+    .editPayment .formCenter .editPaymentDescriptionInput {
+        width: -webkit-fill-available;
+    }
+     /* User Profile */
+    .userProfileBg{
+    width: auto;
+    height: auto;
+   }
+  
+  
+}

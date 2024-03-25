@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Upload</title>
+    <link rel="icon" type="image/x-icon" href="/images/indraImmigrationFevicon.ico">
+
+    <!-- slick carousel css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" integrity="sha512-wR4oNhLBHf7smjy0K4oqzdWumd+r5/+6QO/vDda76MW5iug4PT7v86FoEkySIJft3XA0Ae6axhIvHrqwm793Nw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- external CSS -->
+    <link rel="stylesheet" href="style.css">
+
+
+</head>
+<body>
+    <style>
+        .viewButton {
+            width: 174px;
+            height: 43px;
+            border-radius: 27px;
+            border: 1px solid #1E4A6C;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 15px;
+            color: #1E4A6C;
+            margin-top: 15px; 
+            margin-left: 38%;
+            
+        }
+        
+        .editInput::placeholder,
+        select {
+            color: #888; 
+        }
+
+        .editInput,
+        select {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background-position: right center;
+            background-repeat: no-repeat;
+            padding-right: 40px;  
+            position: relative;
+        }
+
+         
+        .upload-icon {
+            position: absolute;
+            top: 50%;
+            right: 170px;
+            transform: translateY(-50%);
+            width: 20px;  
+            height: 20px;  
+        }
+        
+    </style>
+    
+    <div class="logoImage">
+        <center><img src="indraImmigrationLogo.png" alt="Indra Immigration Logo"></center>
+    </div>
+    <header class="header">
+        <div class="header_in">
+            <button type="button" class="toggle" id="toggle">
+                <span></span>
+            </button>
+            <img src="images/indraImmigrationLogo.png" alt="Indra Immigration Logo" width="100px">
+        </div>
+    </header>
+     
+    <div class="sidebar" id='sidebar'>
+       <ul>
+            <center><li><a href="">Home</a></li></center>
+            <center><li><a href="">Profile</a></li></center>
+            <center><li><a href="">Logout</a></li></center>
+       </ul>
+    </div>
+
+    <div class="main">
+        <p class="paraMain" style="color: #163560;font-weight: 700;font-size: 40px; ">Document Uploads</p><br>
+        <p class="paraMain" style="color:#1E4A6C;margin-top: 50px;font-size: 16px;font-weight:700;">Work Experience</p>
+    </div>
+
+    <div class="editClientBg"style="background:transparent;padding-top:0px;">
+        <div class="formCenter">
+            <form action="">
+                <div style="position: relative;">
+                    <input type="file" id="employee" style="display: none;">
+                    <input type="text" class="editAddress" placeholder="Employment Confirmation Letters" readonly onclick="document.getElementById('employee').click()">
+                    <img src="images/upload.png" alt="Upload Icon" class="upload-icon">
+                    <label for="employee" style="position: absolute; right: 0; top: 0; bottom: 0; left: 0;"></label>
+                </div><br>
+                <div style="position: relative;">
+                    <input type="file" id="service" style="display: none;">
+                    <input type="text" class="editAddress" placeholder="Service Letters" readonly onclick="document.getElementById('service').click()">
+                    <img src="images/upload.png" alt="Upload Icon" class="upload-icon">
+                    <label for="service" style="position: absolute; right: 0; top: 0; bottom: 0; left: 0;"></label>
+                </div><br>
+                <div style="position: relative;">
+                    <input type="file" id="service" style="display: none;">
+                    <input type="text" class="editAddress" placeholder="Other" readonly onclick="document.getElementById('other').click()">
+                    <img src="images/upload.png" alt="Upload Icon" class="upload-icon">
+                    <label for="other" style="position: absolute; right: 0; top: 0; bottom: 0; left: 0;"></label>
+                </div><br>
+
+                 <!--Proof of Purpose-->
+
+                <p class="paraMain" style="color:#1E4A6C;margin-top: 50px;font-size: 16px;font-weight:700;">Proof of Purpose</p><br>
+                <div style="position: relative;">
+                    <input type="file" id="SOP" style="display: none;">
+                    <input type="text" class="editAddress" placeholder="Statement of Purpose (SOP)" readonly onclick="document.getElementById('SOP').click()">
+                    <img src="images/upload.png" alt="Upload Icon" class="upload-icon">
+                    <label for="SOP" style="position: absolute; right: 0; top: 0; bottom: 0; left: 0;"></label>
+                </div><br>
+                <div style="position: relative;">
+                    <input type="file" id="GTE" style="display: none;">
+                    <input type="text" class="editAddress" placeholder="GTE Requirement" readonly onclick="document.getElementById('GTE').click()">
+                    <img src="images/upload.png" alt="Upload Icon" class="upload-icon">
+                    <label for="GTE" style="position: absolute; right: 0; top: 0; bottom: 0; left: 0;"></label>
+                </div><br>
+                <div style="position: relative;">
+                    <input type="file" id="service" style="display: none;">
+                    <input type="text" class="editAddress" placeholder="Other" readonly onclick="document.getElementById('other').click()">
+                    <img src="images/upload.png" alt="Upload Icon" class="upload-icon">
+                    <label for="other" style="position: absolute; right: 0; top: 0; bottom: 0; left: 0;"></label>
+                </div><br>
+                 
+
+                <button type="submit">Next</button><br><br>
+                <br><br><br>
+                <a href="#">Go Back</a>
+            </form>
+        </div>
+    </div>
+    
+    <div class="bottomText">
+        <center><p>by Digisa</p></center>
+    </div>
+
+    <!-- external JS -->
+    <script type="text/javascript" src="script.js"></script>
+    
+</body>
+</html>

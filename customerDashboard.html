@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer DashBoard</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+        }
+
+        ::placeholder {
+            color: #C6C6C6;
+        }
+
+        .editClientBg {
+            border-radius: 24px;
+            background: #D9D9D9;
+            color: #C6C6C6;
+            width: 836px;
+            margin: 70px auto 55px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            position: relative;
+        }
+
+        .formCenter {
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: separate;
+            border-spacing: 10px;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-radius: 10px;
+        }
+
+        th {
+            background-color: #359D9E;
+            color: #FFF;
+            width: 192px;
+            height: 37px;
+        }
+
+        td {
+            background-color: #1E4A6C;
+            color: #FFF;
+            
+        }
+
+        a {
+            color: #FFF;  
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline; 
+        }
+        .toggle-btn {
+            position: relative;
+            width: 81px;
+            height: 36px;
+            margin: 0 auto;
+            border-radius: 40px;
+        }
+
+        input[type="checkbox"] {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            right: 0px;
+            bottom: 0px;
+            margin: 0px;
+            cursor: pointer;
+            opacity: 0;
+            z-index: 2;
+        }
+
+        #_1st-toggle-btn span {
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            bottom: 0px;
+            left: 0px;
+            overflow: hidden;
+            opacity: 1;
+            background-color: #215273;
+            box-shadow: 0px 2px 25px #215273;
+            border-radius: 40px;
+            transition: 0.2s ease background-color, 0.2s ease opacity;
+        }
+
+        #_1st-toggle-btn span:before,
+        #_1st-toggle-btn span:after {
+            content: '';
+            position: absolute;
+            top: 8px;
+            width: 20px;
+            height: 21px;
+            border-radius: 50%;
+            transition: 0.5s ease transform, 0.2s ease background-color;
+        }
+
+        #_1st-toggle-btn span:after {
+            background-color: #FF7171;
+            transform: translate(8px, 0px);
+            z-index: 0;
+        }
+
+        #_1st-toggle-btn input[type="checkbox"]:checked+span {
+            background-color: #FF7171;
+        }
+
+        #_1st-toggle-btn input[type="checkbox"]:active+span {
+            opacity: 0.5;
+        }
+
+        #_1st-toggle-btn input[type="checkbox"]:checked+span:before {
+            background-color: #FF7171;
+            transform: translate(56px, -19px);
+        }
+
+        #_1st-toggle-btn input[type="checkbox"]:checked+span:after {
+            background-color: #FF7171;
+            transform: translate(79px, 0px);
+        }
+        ::placeholder {
+            color: #C6C6C6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .main {
+            margin-top: 70px;
+            margin-bottom: 55px;
+        }
+
+        .paraMain {
+            color: #359D9E;
+            text-align: center;
+            font-size: 16px;
+            font-weight: 400;
+            margin: 0;
+        }
+
+        .editClientBg {
+            border-radius: 24px;
+            background: #D9D9D9;
+            color: #C6C6C6;
+            width: 100%;
+            max-width: 836px;
+            height: auto;
+            flex-shrink: 0;
+            margin-left: auto;
+            margin-right: auto;
+            padding-top: 49px;
+        }
+
+        .formCenter {
+            text-align: center;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            margin: 0 10px;
+            margin-bottom: 20px;
+        }
+
+        .para {
+            color: #000000;
+            text-align: left;
+            font-size: 16px;
+            font-weight: 400;
+            margin: 0;
+        }
+        
+        .timeline {
+      list-style-type: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .li {
+      transition: all 200ms ease-in;
+      display: flex;
+      flex-direction: column; /* Updated to make it a column layout */
+      align-items: center;
+      text-align: center;
+    }
+
+    .timestamp {
+      margin-top: 10px; /* Added margin for spacing */
+      font-weight: 100;
+    }
+
+    .status {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border-top: 2px solid #D6DCE0;
+      position: relative;
+      transition: all 200ms ease-in;
+    }
+
+    .status h4 {
+      font-weight: 600;
+    }
+
+    .status:before {
+      content: '';
+      width: 25px;
+      height: 25px;
+      background-color: white;
+      border-radius: 25px;
+      border: 1px solid #ddd;
+      position: absolute;
+      top: -15px;
+      left: 42%;
+      transition: all 200ms ease-in;
+    }
+
+    .status.completed:before {
+      background-color: #359D9E;
+      border: none;
+      transition: all 200ms ease-in;
+      content: '\2713'; /* Checkmark character inside the completed circle */
+      font-size: 18px;
+      color: white;
+      line-height: 25px;
+      text-align: center;
+    }
+
+    .status.completed h4 {
+      color: #359D9E;
+    }
+
+    @media (min-device-width: 320px) and (max-device-width: 700px) {
+      .timeline {
+        list-style-type: none;
+        display: block;
+      }
+
+      .li {
+        transition: all 200ms ease-in;
+        display: flex;
+        width: inherit;
+      }
+
+      .timestamp {
+        width: 100px;
+      }
+
+      .status:before {
+        left: -8%;
+        top: 30%;
+        transition: all 200ms ease-in;
+      }
+    }
+    </style>
+</head>
+
+<center><a href="#"><img class="profileImage" src="images/Sewmi.png" alt="Indra Immigration Logo"></a>
+<p style="color: #163560; font-weight: 700; font-size: 40px;">Thasantha Sivakumar</p>
+<p style="color: #359D9E; font-weight: 400; font-size: 16px;">Visa Tracker</p>
+</center>
+
+<div class="editClientBg"style="background-color:#EFEFEF">
+    <div class="formCenter">
+      
+        <ul class="timeline" id="timeline">
+            <li class="li complete">
+              <div class="status completed">
+                <h4> Application <br>Received </h4>
+                <div class="timestamp">
+                  <h4>19.32  18-05-23</h4>
+                </div>
+              </div>
+            </li>
+            <li class="li complete">
+              <div class="status completed">
+                <h4> Documents <br>Reviewing </h4>
+                <div class="timestamp">
+                  <h4>19.45  18-05-23</h4>
+                </div>
+              </div>
+            </li>
+            <li class="li">
+              <div class="status">
+                <h4> Document <br>Submission </h4>
+                <div class="timestamp">
+                  <h4>20.10  18-05-23</h4>
+                </div>
+              </div>
+            </li>
+            <li class="li">
+              <div class="status">
+                <h4> Visa <br>Approved </h4>
+                <div class="timestamp">
+                  <h4>21.05  18-05-23</h4>
+                </div>
+              </div>
+            </li>
+          </ul>
+
+
+        </div>
+        </div>
+
+<!---Document Upload Start-->
+<div class="editClientBg">
+    <div class="formCenter">
+        <p style="color: #163560; font-weight: 700; font-size: 40px;">Documents</p>
+
+        <form action="" style="margin-top:20px; margin-left: 20px;margin-right: 20px;">
+            <p style="color: #359D9E; font-weight: 400; font-size: 16px;">Personal Identification</p>
+            <table style="width: 100%; margin-top: 20px; border-collapse: separate; border-spacing: 10px;">
+                <tr>
+                    <th style="width: 40%; height: 40px;">Passport</th>
+                    <td style="width: 60%; height: 40px;"><a href="#">Preview Document</a></td>
+                </tr>
+                <tr>
+                    <th style="width: 40%; height: 40px;">Other</th>
+                    <td style="width: 60%; height: 40px;"><a href="#">Not uploaded</a></td>
+                </tr>
+            </table>
+            <p style="color: #359D9E; font-weight: 400; font-size: 16px;">Educational Qualifications</p>
+            <table style="width: 100%; margin-top: 20px; border-collapse: separate; border-spacing: 10px;">
+                <tr>
+                    <th style="width: 40%; height: 40px;">O/L certificate</th>
+                    <td style="width: 60%; height: 40px;"><a href="#">Preview Document</a></td>
+                </tr> 
+                <tr>
+                    <th style="width: 40%; height: 40px;">A/L certificate</th>
+                    <td style="width: 60%; height: 40px;"><a href="#">Not uploaded</a></td>
+                </tr> 
+                <tr>
+                    <th style="width: 40%; height: 40px;">Diploma/Degree/Masters Certificate</th>
+                    <td style="width: 60%; height: 40px;"><a href="#">Not uploaded</a></td>
+                </tr>  
+                <tr>
+                    <th style="width: 40%; height: 40px;">Transcript</th>
+                    <td style="width: 60%; height: 40px;"><a href="#">Preview Document</a></td>
+                </tr> 
+            </table>
+            <p style="color: #359D9E; font-weight: 400; font-size: 16px;">Work Experience</p>
+            <table style="width: 100%; margin-top: 20px; border-collapse: separate; border-spacing: 10px;">
+                <tr>
+                    <th style="width: 40%; height: 40px;">Employment Confirmation Letters</th>
+                    <td style="width: 60%; height: 40px;"><a href="#">Preview Document</a></td>
+                </tr> 
+                <tr>
+                    <th style="width: 40%; height: 40px;">Service Letters</th>
+                    <td style="width: 60%; height: 40px;"><a href="#">Not uploaded</a></td>
+                </tr> 
+                <tr>
+                    <th style="width: 40%; height: 40px;">Other</th>
+                    <td style="width: 60%; height: 40px;"><a href="#">Not uploaded</a></td>
+                </tr>      
+            </table>
+        </table>
+        <p style="color: #359D9E; font-weight: 400; font-size: 16px;">Proof of Purpose</p>
+        <table style="width: 100%; margin-top: 20px; border-collapse: separate; border-spacing: 10px;">
+            <tr>
+                <th style="width: 40%; height: 40px;">Statement of Purpose (SOP)</th>
+                <td style="width: 60%; height: 40px;"><a href="#">Preview Document</a></td>
+            </tr> 
+            <tr>
+                <th style="width: 40%; height: 40px;">GTE Requirement</th>
+                <td style="width: 60%; height: 40px;"><a href="#">Not uploaded</a></td>
+            </tr> 
+            <tr>
+                <th style="width: 40%; height: 40px;">Other</th>
+                <td style="width: 60%; height: 40px;"><a href="#">Not uploaded</a></td>
+            </tr>      
+        </table>
+        <p style="color: #359D9E; font-weight: 400; font-size: 16px;">Proof of funds</p>
+        <table style="width: 100%; margin-top: 20px; border-collapse: separate; border-spacing: 10px;">
+            <tr>
+                <th style="width: 40%; height: 40px;">Bank Statements</th>
+                <td style="width: 60%; height: 40px;"><a href="#">Preview Document</a></td>
+            </tr> 
+            <tr>
+                <th style="width: 40%; height: 40px;">Fixed Deposit Certificates</th>
+                <td style="width: 60%; height: 40px;"><a href="#">Not uploaded</a></td>
+            </tr> 
+            <tr>
+                <th style="width: 40%; height: 40px;">Other</th>
+                <td style="width: 60%; height: 40px;"><a href="#">Not uploaded</a></td>
+            </tr>      
+        </table>
+        <p style="color: #359D9E; font-weight: 400; font-size: 16px;">Additional Documents</p>
+        <table style="width: 100%; margin-top: 20px; border-collapse: separate; border-spacing: 10px;"> 
+            <tr>
+                <th style="width: 40%; height: 40px;">Other</th>
+                <td style="width: 60%; height: 40px;"><a href="#">Not uploaded</a></td>
+            </tr>      
+        </table>
+        </form>
+    </div>
+</div>
+<!--Document Upload End-->
+
+
+
+
+
+
+
+    <div class="editClientBg">
+        <div class="formCenter">
+            <p style="color: #163560; font-weight: 700; font-size: 40px;">Personel Details</p>
+            <form action="" style="margin-top:20px; margin-left: 20px;margin-right: 20px;">
+                <table>
+                    <tr>
+                        <th>Full name</th>
+                        <td><a href="#">Thasantha Sivakumar</a></td>
+                    </tr>
+                    <tr>
+                        <th>Date of birth</th>
+                        <td><a href="#">19th December 2003</a></td>
+                    </tr>
+                    <tr>
+                        <th>Birth Country</th>
+                        <td><a href="#">Sri Lanka</a></td>
+                    </tr>
+                    <tr>
+                        <th>Address</th>
+                        <td><a href="#">Address</a></td>
+                    </tr>
+                    <tr>
+                        <th>Occupation</th>
+                        <td><a href="#">Occupation</a></td>
+                    </tr>
+                    <tr>
+                        <th>Mobile No.</th>
+                        <td><a href="#">Mobile No.</a></td>
+                    </tr>
+                    <tr>
+                        <th>Telephone.</th>
+                        <td><a href="#">Telephone</a></td>
+                    </tr>
+                    <tr>
+                        <th>Email ID</th>
+                        <td><a href="#">Email ID</a></td>
+                    </tr>
+                    <tr>
+                        <th>NIC No.</th>
+                        <td><a href="#">NIC No.</a></td>
+                    </tr>
+                    <tr>
+                        <th>NIC issued date</th>
+                        <td><a href="#">NIC issued date</a></td>
+                    </tr>
+
+                </table>
+            </form>
+        </div>
+    </div>
+
+    <div class="editClientBg">
+        <div class="formCenter">
+            <p style="color: #359D9E; font-weight: 400; font-size: 16px;">Applicant’s Spouse</p>
+            <form action="" style="margin-top:20px; margin-left: 20px;margin-right: 20px;">
+                <table>
+                    <tr>
+                        <th>Full name</th>
+                        <td><a href="#">Thasantha Sivakumar</a></td>
+                    </tr>
+                    <tr>
+                        <th>Date of birth</th>
+                        <td><a href="#">19th December 2003</a></td>
+                    </tr>
+                    <tr>
+                        <th>Birth Country</th>
+                        <td><a href="#">Sri Lanka</a></td>
+                    </tr>
+                    <tr>
+                        <th>Address</th>
+                        <td><a href="#">Address</a></td>
+                    </tr>
+                    <tr>
+                        <th>Occupation</th>
+                        <td><a href="#">Occupation</a></td>
+                    </tr>
+                    <tr>
+                        <th>Mobile No.</th>
+                        <td><a href="#">Mobile No.</a></td>
+                    </tr>
+                    <tr>
+                        <th>Telephone.</th>
+                        <td><a href="#">Telephone</a></td>
+                    </tr>
+                    <tr>
+                        <th>Email ID</th>
+                        <td><a href="#">Email ID</a></td>
+                    </tr>
+                    <tr>
+                        <th>NIC No.</th>
+                        <td><a href="#">NIC No.</a></td>
+                    </tr>
+                    <tr>
+                        <th>NIC issued date</th>
+                        <td><a href="#">NIC issued date</a></td>
+                    </tr>
+
+                </table>
+            </form>
+        </div>
+    </div>
+    <div class="editClientBg">
+        <div class="formCenter">
+            <p style="color: #359D9E; font-weight: 400; font-size: 16px;">Emergency contact information</p>
+            <form action="" style="margin-top:20px; margin-left: 20px;margin-right: 20px;">
+                <table>
+                    <tr>
+                        <th>Full name</th>
+                        <td><a href="#">Thasantha Sivakumar</a></td>
+                    </tr>
+                    <tr>
+                        <th>Date of birth</th>
+                        <td><a href="#">19th December 2003</a></td>
+                    </tr>
+                    <tr>
+                        <th>Birth Country</th>
+                        <td><a href="#">Sri Lanka</a></td>
+                    </tr>
+                    <tr>
+                        <th>Address</th>
+                        <td><a href="#">Address</a></td>
+                    </tr>
+                    <tr>
+                        <th>Occupation</th>
+                        <td><a href="#">Occupation</a></td>
+                    </tr>
+                    <tr>
+                        <th>Mobile No.</th>
+                        <td><a href="#">Mobile No.</a></td>
+                    </tr>
+                    <tr>
+                        <th>Information</th>
+                        <td><a href="#">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur,</a></td>
+                    </tr>
+                    
+
+                </table>
+            </form>
+        </div>
+    </div>
+    <div class="editClientBg">
+        <div class="formCenter">
+            <p style="color: #163560; font-weight: 700; font-size: 40px;">Family details of <br>Principal Applicant</p>
+            <p style="color: #359D9E; font-weight: 400; font-size: 16px;">Mother</p>
+            <form action="" style="margin-top:20px; margin-left: 20px;margin-right: 20px;">
+                <table>
+                    <tr>
+                        <th>Full name</th>
+                        <td><a href="#">Thasantha Sivakumar</a></td>
+                    </tr>
+                    <tr>
+                        <th>Date of birth</th>
+                        <td><a href="#">19th December 2003</a></td>
+                    </tr>
+                    <tr>
+                        <th>Birth Country</th>
+                        <td><a href="#">Sri Lanka</a></td>
+                    </tr>
+                    <tr>
+                        <th>Address</th>
+                        <td><a href="#">Address</a></td>
+                    </tr>
+                    <tr>
+                        <th>Occupation</th>
+                        <td><a href="#">Occupation</a></td>
+                    </tr>
+                    <tr>
+                        <th>Mobile No.</th>
+                        <td><a href="#">Mobile No.</a></td>
+                    </tr>
+                    <tr>
+                        <th>Information</th>
+                        <td><a href="#">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur,</a></td>
+                    </tr>
+                    
+
+                </table>
+            </form>
+        </div>
+    </div>
+    <div class="editClientBg">
+        <div class="formCenter">
+            <p style="color: #163560; font-weight: 700; font-size: 40px;">Family details of <br>Principal Applicant</p>
+            <p style="color: #359D9E; font-weight: 400; font-size: 16px;">Father</p>
+            <form action="" style="margin-top:20px; margin-left: 20px;margin-right: 20px;">
+                <table>
+                    <tr>
+                        <th>Full name</th>
+                        <td><a href="#">Thasantha Sivakumar</a></td>
+                    </tr>
+                    <tr>
+                        <th>Date of birth</th>
+                        <td><a href="#">19th December 2003</a></td>
+                    </tr>
+                    <tr>
+                        <th>Birth Country</th>
+                        <td><a href="#">Sri Lanka</a></td>
+                    </tr>
+                    <tr>
+                        <th>Address</th>
+                        <td><a href="#">Address</a></td>
+                    </tr>
+                    <tr>
+                        <th>Occupation</th>
+                        <td><a href="#">Occupation</a></td>
+                    </tr>
+                    <tr>
+                        <th>Mobile No.</th>
+                        <td><a href="#">Mobile No.</a></td>
+                    </tr>
+                    <tr>
+                        <th>Information</th>
+                        <td><a href="#">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur,</a></td>
+                    </tr>
+                    
+
+                </table>
+            </form>
+        </div>
+    </div>
+    <div class="editClientBg">
+        <div class="formCenter">
+            <p style="color: #163560; font-weight: 700; font-size: 40px;">Siblings details of <br>Principal Applicant</p>
+            <p style="color: #359D9E; font-weight: 400; font-size: 16px;">Brother</p>
+            <form action="" style="margin-top:20px; margin-left: 20px;margin-right: 20px;">
+                <table>
+                    <tr>
+                        <th>Full name</th>
+                        <td><a href="#">Thasantha Sivakumar</a></td>
+                    </tr>
+                    <tr>
+                        <th>Date of birth</th>
+                        <td><a href="#">19th December 2003</a></td>
+                    </tr>
+                    <tr>
+                        <th>Birth Country</th>
+                        <td><a href="#">Sri Lanka</a></td>
+                    </tr>
+                    <tr>
+                        <th>Address</th>
+                        <td><a href="#">Address</a></td>
+                    </tr>
+                    <tr>
+                        <th>Civil Status</th>
+                        <td><a href="#">Civil Status</a></td>
+                    </tr>
+                    <tr>
+                        <th>Occupation</th>
+                        <td><a href="#">Occupation</a></td>
+                    </tr>   
+
+                </table>
+            </form>
+        </div>
+    </div>
+    <div class="editClientBg">
+        <div class="formCenter">
+            <p style="color: #163560; font-weight: 700; font-size: 40px;">Highest Level of your <br>Education</p>
+            <p style="color: #359D9E; font-weight: 400; font-size: 16px;">Brother</p>
+            <form action="" style="margin-top:20px; margin-left: 20px;margin-right: 20px;">
+                <table>
+                    <tr>
+                        <th>Full name</th>
+                        <td><a href="#">Thasantha Sivakumar</a></td>
+                    </tr>
+                    <tr>
+                        <th>Date of birth</th>
+                        <td><a href="#">19th December 2003</a></td>
+                    </tr>
+                    <tr>
+                        <th>Birth Country</th>
+                        <td><a href="#">Sri Lanka</a></td>
+                    </tr>
+                    <tr>
+                        <th>Address</th>
+                        <td><a href="#">Address</a></td>
+                    </tr>
+                    <tr>
+                        <th>Civil Status</th>
+                        <td><a href="#">Civil Status</a></td>
+                    </tr>
+                    <tr>
+                        <th>Occupation</th>
+                        <td><a href="#">Occupation</a></td>
+                    </tr>   
+
+                </table>
+            </form>
+        </div>
+    </div>
+    <div class="editClientBg">
+        <div class="formCenter">
+            <p style="color: #163560; font-weight: 700; font-size: 40px;">Details of your occupation <br>for the last 10 years</p>
+            <form action="" style="margin-top:20px; margin-left: 20px;margin-right: 20px;">
+                <table>
+                    <tr>
+                        <th>Occupation</th>
+                        <td><a href="#">Thasantha Sivakumar</a></td>
+                    </tr>
+                    <tr>
+                        <th>Employer name</th>
+                        <td><a href="#">19th December 2003</a></td>
+                    </tr>
+                    <tr>
+                        <th>Joined date</th>
+                        <td><a href="#">Sri Lanka</a></td>
+                    </tr>
+                    <tr>
+                        <th>Left date</th>
+                        <td><a href="#">Address</a></td>
+                    </tr>
+                    <tr>
+                        <th>Salary / Month</th>
+                        <td><a href="#">Civil Status</a></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+    <div class="editClientBg">
+        <div class="formCenter">
+            <p style="color: #163560; font-weight: 700; font-size: 40px;">Education Details<br> Main Applicant</p>
+            <form action="" style="margin-top:20px; margin-left: 20px;margin-right: 20px;">
+                <table>
+                    <tr>
+                        <th>Your name</th>
+                        <td><a href="#">Thasantha Sivakumar</a></td>
+                    </tr>
+                    <tr>
+                        <th>College name</th>
+                        <td><a href="#">19th December 2003</a></td>
+                    </tr>
+                    <tr>
+                        <th>Started date</th>
+                        <td><a href="#">Sri Lanka</a></td>
+                    </tr>
+                    <tr>
+                        <th>Last date</th>
+                        <td><a href="#">Address</a></td>
+                    </tr>
+                    <tr>
+                        <th>Qualification</th>
+                        <td><a href="#">Civil Status</a></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+    <div class="editClientBg">
+        <div class="formCenter">
+            <p style="color: #163560; font-weight: 700; font-size: 40px;">EDUCATION CREDENTIAL <br>ASSESSMENT</p>
+            <p style="color: #163560; font-weight: 400; font-size: 16px;">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur,</p>   
+        </div>
+
+    </div> 
+        <div class="editClientBg">
+            <div class="formCenter">
+                <p style="color: #163560; font-weight: 700; font-size: 40px;">Education Details<br>Spouse</p>
+                <form action="" style="margin-top:20px; margin-left: 20px;margin-right: 20px;">
+                    <table>
+                        <tr>
+                            <th>Spouse name</th>
+                            <td><a href="#">Thasantha Sivakumar</a></td>
+                        </tr>
+                        <tr>
+                            <th>College name</th>
+                            <td><a href="#">19th December 2003</a></td>
+                        </tr>
+                        <tr>
+                            <th>Last date</th>
+                            <td><a href="#">Address</a></td>
+                        </tr>
+                        <tr>
+                            <th>Qualification</th>
+                            <td><a href="#">Civil Status</a></td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </div>
+        <div class="editClientBg">
+            <div class="formCenter">
+                <p style="color: #163560; font-weight: 700; font-size: 40px;">EDUCATION CREDENTIAL <br>ASSESSMENT</p>
+                <p style="color: #163560; font-weight: 400; font-size: 16px;">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur,</p>
+            </div>
+        </div>
+        
+        <div class="editClientBg" style="background-color: #fff;">
+            <div class="formCenter">
+                <p style="color: #163560; font-weight: 700; font-size: 40px;">Background information
+                    <br>of Main applicant</p>
+                <table style="width: 100%; margin-top: 20px; border-collapse: separate; border-spacing: 10px;">
+                    <tr>
+                        <td style="background-color: #1E4A6C; color: #FFF; padding: 10px; border-radius: 10px; text-align: center;"
+                            colspan="4"><a href="#applicant-details" style="color: #FFF; text-decoration: none;">Thasanthan Sivakumar</a></td>
+                    </tr>
+                    <tr>
+                        <th style="padding: 10px;">Time period</th>
+                        <th style="padding: 10px; border-radius: 10px;">Job title | Study or Unemployment</th>
+                        <th style="padding: 10px; border-radius: 10px;">Full time | Part time?</th>
+                        <th style="padding: 10px; border-radius: 10px;">Company, City country</th>
+                    </tr>
+                    <tr style="background-color: #A7A7A7; color: #000; border-radius: 10px;">
+                        <td style="padding: 10px; background: #A7A7A7;"><a href="#job-details">2019/01 to 2020/02</a></td>
+                        <td style="padding: 10px; background: #A7A7A7;"><a href="#job-details">Accountant</a></td>
+                        <td style="padding: 10px; background: #A7A7A7;"><a href="#job-details">Driver, Digisa (Pvt) Ltd</a></td>
+                        <td style="padding: 10px; background: #A7A7A7;"><a href="#job-details">Digisa, Makola, Sri Lanka.</a></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        
+        <div class="editClientBg" style="background-color: #fff;">
+            <div class="formCenter">
+                <p style="color: #163560; font-weight: 700; font-size: 40px;">Background information
+                    <br>of Spouse</p>
+                <table style="width: 100%; margin-top: 20px; border-collapse: separate; border-spacing: 10px;">
+                    <tr>
+                        <td style="background-color: #1E4A6C; color: #FFF; padding: 10px; border-radius: 10px; text-align: center;"
+                            colspan="4">Thasanthan Sivakumar</td>
+                    </tr>
+                    <tr>
+                        <th style="padding: 10px;">Time period</th>
+                        <th style="padding: 10px; border-radius: 10px;">Job title | Study or Unemployment</th>
+                        <th style="padding: 10px; border-radius: 10px;">Full time | Part time?</th>
+                        <th style="padding: 10px; border-radius: 10px;">Company, City country</th>
+                    </tr>
+                    <tr style="background-color: #A7A7A7; color: #000; border-radius: 10px;">
+                        <td style="padding: 10px; background: #A7A7A7;"><a href="#job-details">2019/01 to 2020/02</a></td>
+                        <td style="padding: 10px; background: #A7A7A7;"><a href="#job-details">Accountant</a></td>
+                        <td style="padding: 10px; background: #A7A7A7;"><a href="#job-details">Driver, Digisa (Pvt) Ltd</a></td>
+                        <td style="padding: 10px; background: #A7A7A7;"><a href="#job-details">Digisa, Makola, Sri Lanka.</a></td>
+                    </tr>
+                    
+                </table>
+            </div>
+        </div>
+        <div class="editClientBg" style="background-color: #fff;">
+            <div class="formCenter">
+                <p style="color: #163560; font-weight: 700; font-size: 40px;">Background information
+                    <br>of Child 01</p>
+                <table style="width: 100%; margin-top: 20px; border-collapse: separate; border-spacing: 10px;">
+                    <tr>
+                        <td style="background-color: #1E4A6C; color: #FFF; padding: 10px; border-radius: 10px; text-align: center;"
+                            colspan="4">Thasanthan Sivakumar</td>
+                    </tr>
+                    <tr>
+                        <th style="padding: 10px;">Time period</th>
+                        <th style="padding: 10px; border-radius: 10px;">Job title | Study or Unemployment</th>
+                        <th style="padding: 10px; border-radius: 10px;">Full time | Part time?</th>
+                        <th style="padding: 10px; border-radius: 10px;">Company, City country</th>
+                    </tr>
+                    <tr style="background-color: #A7A7A7; color: #000; border-radius: 10px;">
+                        <td style="padding: 10px; background: #A7A7A7;"><a href="#job-details">2019/01 to 2020/02</a></td>
+                        <td style="padding: 10px; background: #A7A7A7;"><a href="#job-details">Accountant</a></td>
+                        <td style="padding: 10px; background: #A7A7A7;"><a href="#job-details">Driver, Digisa (Pvt) Ltd</a></td>
+                        <td style="padding: 10px; background: #A7A7A7;"><a href="#job-details">Digisa, Makola, Sri Lanka.</a></td>
+                    </tr>
+                    
+                </table>
+            </div>
+        </div>
+
+
+        <div class="container">
+            <div class="main">
+                <p class="paraMain" style="color: #163560; font-weight: 700; font-size: 40px;">Visa Refusals and History<br>Main Applicant</p>
+                <p style="color: #359D9E;text-align: center;">Thasantha Sivakumar</p>
+        
+                <div class="editClientBg">
+                    <div class="formCenter">
+                        <table>
+                            <tr>
+                                <td style="background-color: #A7A7A7;"><a href="#" style="color: #000;">Been convicted of a crime or offence in Canada for which a pardon has not been granted under the Criminal Records Act of Canada?</a></td>
+                                <td style="background-color: transparent;">
+                                    <section>
+                                        <div class="toggle-btn" id="_1st-toggle-btn">
+                                            <input type="checkbox">
+                                            <span></span>
+                                        </div>
+                                    </section>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="background-color: #A7A7A7;"><a href="#" style="color: #000;">Been convicted of a crime or offence in Canada for which a pardon has not been granted under the Criminal Records Act of Canada?</a></td>
+                                <td style="background-color: transparent;">
+                                    <section>
+                                        <div class="toggle-btn" id="_1st-toggle-btn">
+                                            <input type="checkbox">
+                                            <span></span>
+                                        </div>
+                                    </section>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="background-color: #A7A7A7;"><a href="#" style="color: #000;">Been convicted of a crime or offence in Canada for which a pardon has not been granted under the Criminal Records Act of Canada?</a></td>
+                                <td style="background-color: transparent;">
+                                    <section>
+                                        <div class="toggle-btn" id="_1st-toggle-btn">
+                                            <input type="checkbox">
+                                            <span></span>
+                                        </div>
+                                    </section>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container">
+            <div class="main">
+                <p class="paraMain" style="color: #163560; font-weight: 700; font-size: 40px;">Visa Refusals and History<br>Spouse</p>
+                <p style="color: #359D9E;text-align: center;">Thasantha Sivakumar</p>
+        
+                <div class="editClientBg">
+                    <div class="formCenter">
+                        <table>
+                            <tr>
+                                <td style="background-color: #A7A7A7;"><a href="#" style="color: #000;">Been convicted of a crime or offence in Canada for which a pardon has not been granted under the Criminal Records Act of Canada?</a></td>
+                                <td style="background-color: transparent;">
+                                    <section>
+                                        <div class="toggle-btn" id="_1st-toggle-btn">
+                                            <input type="checkbox">
+                                            <span></span>
+                                        </div>
+                                    </section>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="background-color: #A7A7A7;"><a href="#" style="color: #000;">Been convicted of a crime or offence in Canada for which a pardon has not been granted under the Criminal Records Act of Canada?</a></td>
+                                <td style="background-color: transparent;">
+                                    <section>
+                                        <div class="toggle-btn" id="_1st-toggle-btn">
+                                            <input type="checkbox">
+                                            <span></span>
+                                        </div>
+                                    </section>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="background-color: #A7A7A7;"><a href="#" style="color: #000;">Been convicted of a crime or offence in Canada for which a pardon has not been granted under the Criminal Records Act of Canada?</a></td>
+                                <td style="background-color: transparent;">
+                                    <section>
+                                        <div class="toggle-btn" id="_1st-toggle-btn">
+                                            <input type="checkbox">
+                                            <span></span>
+                                        </div>
+                                    </section>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="editClientBg" style="background-color: #fff;">
+            <div class="formCenter">
+<table style="width: 100%; border-collapse: separate; border-spacing: 10px;">
+                <tr>
+                    <td style="background-color: #1E4A6C; color: #FFF; padding: 10px; border-radius: 10px;text-align: center;" colspan="6">Account Holder Name</td>
+                </tr>
+                <tr>
+                    <th style="padding: 10px;">Bank Name</th>
+                    <th style="padding: 10px; border-radius: 10px;">Relationship of the client</th>
+                    <th style="padding: 10px; border-radius: 10px;">Date of deposit</th>
+                    <th style="padding: 10px; border-radius: 10px;">Amount</th>
+                    <th style="padding: 10px; border-radius: 10px;">Type of AccountSavings / Fixed</th>
+                    <th style="padding: 10px; border-radius: 10px;">Source of funds</th>
+                </tr>
+                <tr style="background-color: #A7A7A7; color: #000; border-radius: 10px;">
+                    <td style="padding: 10px;"></td>
+                    <td style="padding: 10px;"></td>
+                    <td style="padding: 10px;"></td>
+                    <td style="padding: 10px;"></td>
+                    <td style="padding: 10px;"></td>
+                    <td style="padding: 10px;"></td>
+                </tr>
+                <tr style="background-color: #A7A7A7; color: #000; border-radius: 10px;">
+                    <td style="padding: 10px;"></td>
+                    <td style="padding: 10px;"></td>
+                    <td style="padding: 10px;"></td>
+                    <td style="padding: 10px;"></td>
+                    <td style="padding: 10px;"></td>
+                    <td style="padding: 10px;"></td>
+                </tr>
+                <tr style="background-color: #A7A7A7; color: #000; border-radius: 10px;">
+                    <td style="padding: 10px;"></td>
+                    <td style="padding: 10px;"></td>
+                    <td style="padding: 10px;"></td>
+                    <td style="padding: 10px;"></td>
+                    <td style="padding: 10px;"></td>
+                    <td style="padding: 10px;"></td>
+                </tr>
+                <tr style="background-color: #A7A7A7; color: #000; border-radius: 10px;">
+                    <td style="padding: 10px;"></td>
+                    <td style="padding: 10px;"></td>
+                    <td style="padding: 10px;"></td>
+                    <td style="padding: 10px;"></td>
+                    <td style="padding: 10px;"></td>
+                    <td style="padding: 10px;"></td>
+                </tr>
+                 
+            </table>
+
+                </div>
+                </div>
+                <script>
+                    var completes = document.querySelectorAll(".complete");
+                    var toggleButton = document.getElementById("toggleButton");
+                  
+                    function toggleComplete(){
+                      var lastComplete = completes[completes.length - 1];
+                      lastComplete.classList.toggle('complete');
+                    }
+                  
+                    toggleButton.onclick = toggleComplete;
+                  </script>
+</body>
+
+</html>

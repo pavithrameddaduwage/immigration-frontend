@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visa Refusals and History</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+        }
+
+        ::placeholder {
+            color: #C6C6C6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .main {
+            margin-top: 70px;
+            margin-bottom: 55px;
+        }
+
+        .paraMain {
+            color: #359D9E;
+            text-align: center;
+            font-size: 16px;
+            font-weight: 400;
+            margin: 0;
+        }
+
+        .editClientBg {
+            border-radius: 24px;
+            background: #D9D9D9;
+            color: #D9D9D9;
+            width: 100%;
+            max-width: 836px;
+            height: auto;
+            flex-shrink: 0;
+            margin-left: auto;
+            margin-right: auto;
+            padding-top: 49px;
+        }
+
+        .formCenter {
+            text-align: center;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            margin: 0 10px;
+            margin-bottom: 20px;
+        }
+
+        .para {
+            color: #000000;
+            text-align: left;
+            font-size: 16px;
+            font-weight: 400;
+            margin: 0;
+        }
+
+        button {
+            border-radius: 27px;
+            background: #1E4A6C;
+            width: 204px;
+            height: 43px;
+            margin-top: 29px;
+            color: #FFF;
+            text-align: center;
+            font-size: 16px;
+            font-weight: 400;
+            border-color: transparent;
+        }
+
+        /* Toggle button styles */
+
+        main {
+            text-align: center;
+        }
+
+        h1 {
+            font-family: Segoe UI;
+            text-align: center;
+            line-height: 42px;
+            padding-bottom: 23px;
+            margin: 10px 0px;
+            border-bottom: 1px solid #dadada;
+        }
+
+        .toggle-btn {
+            position: relative;
+            width: 81px;
+            height: 36px;
+            margin: 0 auto;
+            border-radius: 40px;
+        }
+
+        input[type="checkbox"] {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            right: 0px;
+            bottom: 0px;
+            margin: 0px;
+            cursor: pointer;
+            opacity: 0;
+            z-index: 2;
+        }
+
+        #_1st-toggle-btn span {
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            bottom: 0px;
+            left: 0px;
+            overflow: hidden;
+            opacity: 1;
+            background-color: #215273;
+            box-shadow: 0px 2px 25px #215273;
+            border-radius: 40px;
+            transition: 0.2s ease background-color, 0.2s ease opacity;
+        }
+
+        #_1st-toggle-btn span:before,
+        #_1st-toggle-btn span:after {
+            content: '';
+            position: absolute;
+            top: 8px;
+            width: 20px;
+            height: 21px;
+            border-radius: 50%;
+            transition: 0.5s ease transform, 0.2s ease background-color;
+        }
+
+        #_1st-toggle-btn span:after {
+            background-color: #FF7171;
+            transform: translate(8px, 0px);
+            z-index: 0;
+        }
+
+        #_1st-toggle-btn input[type="checkbox"]:checked+span {
+            background-color: #FF7171;
+        }
+
+        #_1st-toggle-btn input[type="checkbox"]:active+span {
+            opacity: 0.5;
+        }
+
+        #_1st-toggle-btn input[type="checkbox"]:checked+span:before {
+            background-color: #FF7171;
+            transform: translate(56px, -19px);
+        }
+
+        #_1st-toggle-btn input[type="checkbox"]:checked+span:after {
+            background-color: #FF7171;
+            transform: translate(79px, 0px);
+        }
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: separate;
+            border-spacing: 10px;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-radius: 10px;
+        }
+
+        th {
+            background-color: #359D9E;
+            color: #FFF;
+            width: 192px;
+            height: 37px;
+        }
+
+        td {
+            background-color: #1E4A6C;
+            color: #FFF;
+            
+        }
+
+        a {
+            
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline; 
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="main">
+            <p class="paraMain" style="color: #163560; font-weight: 700; font-size: 40px;">Visa Refusals and History<br>
+                Spouse</p>
+            <p style="color: red;text-align: center;">Truthfully answer below</p>
+            <p class="paraMain"style="text-align:left;">Please answer this question truthfully and carefully. Hiding information or not providing
+                correct information could lead to visa refusal. Please note the embassies/high commissions independently
+                verify these details. <br> Have you, if you are the principal applicant, any of your family members listed
+                in your application for permanent residence in Canada, ever:</p>
+        </div>
+
+    
+   
+    <div class="container">
+        <div class="main">
+    
+            <div class="editClientBg">
+                <div class="formCenter">
+                    <table>
+                        <tr>
+                            <td style="background-color: #A7A7A7;"><a href="#" style="color: #000;">Been convicted of a crime that warrants an imprisonment term of 4 years or more?
+                            </a></td>
+                            <td style="background-color: transparent;">
+                                <section>
+                                    <div class="toggle-btn" id="_1st-toggle-btn">
+                                        <input type="checkbox">
+                                        <span></span>
+                                    </div>
+                                </section>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="background-color: #A7A7A7;"><a href="#" style="color: #000;">Been checked chest X Ray TB test? Can You Provide a certificate which is valid for 6 months from the date of your x-ray?
+                            </a></td>
+                            <td style="background-color: transparent;">
+                                <section>
+                                    <div class="toggle-btn" id="_1st-toggle-btn">
+                                        <input type="checkbox">
+                                        <span></span>
+                                    </div>
+                                </section>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="background-color: #A7A7A7;"><a href="#" style="color: #000;">Do you have vaccinated for  hepatitis A, hepatitis B, typhoid, yellow fever, Japanese encephalitis, rabies, meningitis, polio, measles, mumps and rubella (MMR), Tdap (tetanus, diphtheria and pertussis), chickenpox, shingles,  pneumonia and influenza ?</a></td>
+                            <td style="background-color: transparent;">
+                                <section>
+                                    <div class="toggle-btn" id="_1st-toggle-btn">
+                                        <input type="checkbox">
+                                        <span></span>
+                                    </div>
+                                </section>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="background-color: #A7A7A7;"><a href="#" style="color: #000;">Been overstayed or submitted false documents on a previous trip to United Kingdom or any other country? </a></td>
+                            <td style="background-color: transparent;">
+                                <section>
+                                    <div class="toggle-btn" id="_1st-toggle-btn">
+                                        <input type="checkbox">
+                                        <span></span>
+                                    </div>
+                                </section>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="background-color: #A7A7A7;"><a href="#" style="color: #000;">Been convicted of a crime or offence in United Kingdom for which a pardon has not been granted under the Criminal Records Act of United Kingdom?
+                            </a></td>
+                            <td style="background-color: transparent;">
+                                <section>
+                                    <div class="toggle-btn" id="_1st-toggle-btn">
+                                        <input type="checkbox">
+                                        <span></span>
+                                    </div>
+                                </section>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="background-color: #A7A7A7;"><a href="#" style="color: #000;">Been convicted of, or are you currently charged with, on trial for, or party to a crime or offence, or subject of any criminal proceedings in any other country?  </a></td>
+                            <td style="background-color: transparent;">
+                                <section>
+                                    <div class="toggle-btn" id="_1st-toggle-btn">
+                                        <input type="checkbox">
+                                        <span></span>
+                                    </div>
+                                </section>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="background-color: #A7A7A7;"><a href="#" style="color: #000;">Made previous claims for refugee protection in United Kingdom or at a United Kingdom visa office abroad, in any other country or countries?
+                            </a></td>
+                            <td style="background-color: transparent;">
+                                <section>
+                                    <div class="toggle-btn" id="_1st-toggle-btn">
+                                        <input type="checkbox">
+                                        <span></span>
+                                    </div>
+                                </section>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="background-color: #A7A7A7;"><a href="#" style="color: #000;">Been refused refugee status, an immigrant or permanent resident visa or visitor or temporary resident visa, to United Kingdom or any other country?  </a></td>
+                            <td style="background-color: transparent;">
+                                <section>
+                                    <div class="toggle-btn" id="_1st-toggle-btn">
+                                        <input type="checkbox">
+                                        <span></span>
+                                    </div>
+                                </section>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="background-color: #A7A7A7;"><a href="#" style="color: #000;">Been refused admission to, or ordered to leave, United Kingdom or any other country? 
+
+                            </a></td>
+                            <td style="background-color: transparent;">
+                                <section>
+                                    <div class="toggle-btn" id="_1st-toggle-btn">
+                                        <input type="checkbox">
+                                        <span></span>
+                                    </div>
+                                </section>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="background-color: #A7A7A7;"><a href="#" style="color: #000;">Been involved in an act of genocide, a war crime or in the commission of a crime against humanity?  </a></td>
+                            <td style="background-color: transparent;">
+                                <section>
+                                    <div class="toggle-btn" id="_1st-toggle-btn">
+                                        <input type="checkbox">
+                                        <span></span>
+                                    </div>
+                                </section>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="background-color: #A7A7A7;"><a href="#" style="color: #000;">Used, planned or advocated the use of armed struggle or violence to reach political, religious or social objectives?
+                            </a></td>
+                            <td style="background-color: transparent;">
+                                <section>
+                                    <div class="toggle-btn" id="_1st-toggle-btn">
+                                        <input type="checkbox">
+                                        <span></span>
+                                    </div>
+                                </section>
+                            </td>
+                        </tr><tr>
+                            <td style="background-color: #A7A7A7;"><a href="#" style="color: #000;">Been associated with a group that used, uses advocated or advocate the use of armed struggle or violence to reach political, religious or social objectives?</a></td>
+                            <td style="background-color: transparent;">
+                                <section>
+                                    <div class="toggle-btn" id="_1st-toggle-btn">
+                                        <input type="checkbox">
+                                        <span></span>
+                                    </div>
+                                </section>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="background-color: #A7A7A7;"><a href="#" style="color: #000;">Been member of an organization that is or was engaged in an activity that is part of a pattern of criminal activity?</a></td>
+                            <td style="background-color: transparent;">
+                                <section>
+                                    <div class="toggle-btn" id="_1st-toggle-btn">
+                                        <input type="checkbox">
+                                        <span></span>
+                                    </div>
+                                </section>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="background-color: #A7A7A7;"><a href="#" style="color: #000;">Been detained, incarcerated or put in jail?</a></td>
+                            <td style="background-color: transparent;">
+                                <section>
+                                    <div class="toggle-btn" id="_1st-toggle-btn">
+                                        <input type="checkbox">
+                                        <span></span>
+                                    </div>
+                                </section>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="background-color: #A7A7A7;"><a href="#" style="color: #000;">Had any serious disease or physical or mental disorder?</a></td>
+                            <td style="background-color: transparent;">
+                                <section>
+                                    <div class="toggle-btn" id="_1st-toggle-btn">
+                                        <input type="checkbox">
+                                        <span></span>
+                                    </div>
+                                </section>
+                            </td>
+                        </tr>
+                        
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <center> <button type="submit">Next</button>
+        <br><br><br>
+        <a href="">Go Back</a></center>
+</body>
+
+</html>

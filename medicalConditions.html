@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Available Funds Summary</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+        }
+
+        ::placeholder {
+            color: #C6C6C6;
+        }
+
+        .main {
+            margin-top: 70px;
+            margin-bottom: 55px;
+        }
+
+        .paraMain {
+            color: #359D9E;
+            text-align: center;
+            font-size: 16px;
+            font-weight: 400;
+            margin: 0;
+        }
+
+        .editClientBg {
+            border-radius: 24px;
+            background: #D9D9D9;
+            color: #C6C6C6;
+            width: 836px;
+            height: 270px;
+            flex-shrink: 0;
+            margin-left: auto;
+            margin-right: auto;
+            padding-top: 49px;
+        }
+
+        .formCenter {
+            text-align: center;
+        }
+
+        .editInput {
+            width: calc(33.33% - 20px);
+            height: 41px;
+            border-radius: 11px;
+            background: #EFEFEF;
+            border: none;
+            margin: 10px;
+            color: #C6C6C6;
+            padding: 0px 10px 0px 10px;
+            box-sizing: border-box;
+        }
+
+        select {
+            width: calc(33.33% - 20px);
+            height: 41px;
+            padding-left: 15px;
+            padding-right: 10px;
+            color: #C6C6C6;
+            background: #EFEFEF;
+            border-radius: 11px;
+            border: none;
+            border-right: 10px solid transparent;
+            margin: 10px;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .editAddress {
+            width: calc(100% - 20px);
+            height: 41px;
+            border-radius: 11px;
+            background: #EFEFEF;
+            border: none;
+            margin: 10px;
+            color: #C6C6C6;
+            padding: 0px 10px 0px 10px;
+            box-sizing: border-box;
+        }
+
+        button {
+            border-radius: 27px;
+            background: #1E4A6C;
+            width: 204px;
+            height: 43px;
+            margin-top: 29px;
+            color: #FFF;
+            text-align: center;
+            font-size: 16px;
+            font-weight: 400;
+            border-color: transparent;
+        }
+
+        
+        .row {
+            display: flex;
+            justify-content: space-between;
+            margin: 0 10px;
+        }
+
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: separate;
+            border-spacing: 10px;  
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #359D9E;
+            color: #FFF;
+            border-radius: 10px;
+        }
+
+        td {
+            background-color: #A7A7A7;
+            color: #000;
+            border-radius: 10px;
+        }
+
+        table tr:first-child td {
+            background-color: #1E4A6C;
+            color: #FFF;
+            padding: 10px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <p class="paraMain" style="color: #163560; font-weight: 700; font-size: 40px;">Declaration of Medical conditions,<br> Criminal records, overstays,<br> any previous visa ban</p>
+        <br>
+        
+        <p class="paraMain">Please answer this question truthfully and carefully. Hiding information or not providing correct information could lead to visa refusal. Please note the embassies/high commissions independently verify these details. 
+            Have you, if you are the principal applicant, any of your family members listed in your family members listed in your application for permanent residence in Canada, ever:</p>
+         
+    </div>
+
+    <div class="editClientBg">
+        <div class="formCenter">
+            <form action="" style="margin-top:20px; margin-left: 20px;margin-right: 20px;">
+              
+                <div class="row">
+                    <input type="text" class="editAddress" placeholder="Bank Name"> 
+                </div>
+
+             
+                <div class="row">
+                    <input type="text-box" class="editAddress" placeholder="Bank Name">     
+                </div>
+
+              
+                 
+                <a href="">Add new section</a>
+
+                 
+
+            </form>
+            <br>
+
+            <table style="width: 100%; border-collapse: separate; border-spacing: 10px;">
+                <tr>
+                    <td style="background-color: #1E4A6C; color: #FFF; padding: 10px; border-radius: 10px;text-align: center;" colspan="6">Account Holder Name</td>
+                </tr>
+                <tr>
+                    <th style="padding: 10px;">Bank Name</th>
+                    <th style="padding: 10px; border-radius: 10px;">Relationship of the client</th>
+                    <th style="padding: 10px; border-radius: 10px;">Date of deposit</th>
+                    <th style="padding: 10px; border-radius: 10px;">Amount</th>
+                    <th style="padding: 10px; border-radius: 10px;">Type of AccountSavings / Fixed</th>
+                    <th style="padding: 10px; border-radius: 10px;">Source of funds</th>
+                </tr>
+                <tr style="background-color: #A7A7A7; color: #000; border-radius: 10px;">
+                    <td style="padding: 10px;"></td>
+                    <td style="padding: 10px;"></td>
+                    <td style="padding: 10px;"></td>
+                    <td style="padding: 10px;"></td>
+                    <td style="padding: 10px;"></td>
+                    <td style="padding: 10px;"></td>
+                </tr>
+                <tr style="background-color: #A7A7A7; color: #000; border-radius: 10px;">
+                    <td style="padding: 10px;"></td>
+                    <td style="padding: 10px;"></td>
+                    <td style="padding: 10px;"></td>
+                    <td style="padding: 10px;"></td>
+                    <td style="padding: 10px;"></td>
+                    <td style="padding: 10px;"></td>
+                </tr>
+                <tr style="background-color: #A7A7A7; color: #000; border-radius: 10px;">
+                    <td style="padding: 10px;"></td>
+                    <td style="padding: 10px;"></td>
+                    <td style="padding: 10px;"></td>
+                    <td style="padding: 10px;"></td>
+                    <td style="padding: 10px;"></td>
+                    <td style="padding: 10px;"></td>
+                </tr>
+                <tr style="background-color: #A7A7A7; color: #000; border-radius: 10px;">
+                    <td style="padding: 10px;"></td>
+                    <td style="padding: 10px;"></td>
+                    <td style="padding: 10px;"></td>
+                    <td style="padding: 10px;"></td>
+                    <td style="padding: 10px;"></td>
+                    <td style="padding: 10px;"></td>
+                </tr>
+                 
+            </table>
+
+          
+            <button type="submit">Next</button>
+            <br><br><br>
+            <a href="">Go Back</a>
+        </div>
+    </div>
+
+</body>
+
+</html>

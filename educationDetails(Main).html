@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Education Details</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'main/images/indraImmigrationFevicon.ico' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;900&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .personaData .left {
+            background-color: #163560;
+            position: relative;
+            width: 427px;
+            padding: 0 15px;
+        }
+
+        .personaData .right {
+            padding: 0 15px;
+        }
+
+        .personaData .right .center {
+            margin-top: 50px;
+            margin-left: 70px;
+        }
+
+        .personaData .right .center h1 {
+            color: #163560;
+            font-family: Poppins;
+            font-size: 40px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            margin-top: 10px;
+            margin-bottom: 0px;
+        }
+
+        .personaData .right .center p {
+            color: #359D9E;
+            font-family: Poppins;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+
+        .personaData .right .center .formSection {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .personaData .right .center .formSection .formGroup {
+            flex-basis: 45%; 
+            margin-bottom: 20px;
+        }
+
+        .personaData .right .center .formSection label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .personaData .right .center .formSection input,
+        .personaData .right .center .formSection select {
+            border-radius: 11px;
+            background: #EFEFEF;
+            border: none;
+            height: 40px;
+            width: 100%;
+            padding: 0.375rem 0.75rem;
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #495057;
+            background-clip: padding-box;
+            transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        }
+
+        .personaData .right .center .formSection button {
+            border: none;
+            border-radius: 27px;
+            background: #1E4A6C;
+            width: 206px;
+            height: 43px;
+            color: #FFF;
+            text-align: center;
+            font-family: Poppins;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            text-transform: capitalize;
+        }
+
+        .personaData .bottomText a {
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 24px;
+            color: #1E1E1E;
+        }
+
+        .personaData .right .center img {
+            max-width: 150px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="personaData">
+        <div class="container-fluid">
+            <div class="row setHeight">
+                <div class="col-lg-6 ps-0 pe-0 left">
+                    <p style="margin-top: 50px; padding-left: 50px;">
+                        <ul style="list-style-type: circle; padding: 50px;color: white;line-height: 30px;">
+                            <li>Provide All education details of schools (grade 1-12), universities, other colleges and if applicable education in Canada.</li>
+                            <li>Indicate completed programs and that you received certificates only such as diploma, degree, master degree etc.</li>
+                            <li>Do not include programs shorter than 6 months duration</li>
+                            <li>Start from the primary school</li>
+                        </ul>
+                    </p>
+                </div>
+
+                <div class="col-lg-6 ps-0 pe-0 right position-relative">
+                    <div class="center">
+                        <img src="images/indraImmigrationLogo.png" alt="Indra Immigration Logo"><br><br>
+                        <h1>Education Details<br>Main Applicant</h1>
+
+                        <div class="formSection">
+                            <form method="post" action="">
+                                <div class="formGroup">
+                                    <label for="yourName">Your Name:</label>
+                                    <input type="text" id="yourName" name="yourName" class="editInput" placeholder="Your Name">
+                                </div>
+
+                            
+                                <div class="formGroup">
+                                    <label for="educationLevel">Education Level:</label>
+                                    <select id="educationLevel" name="educationLevel" class="editInput">
+                                        <option value="highSchool">High School</option>
+                                        <option value="bachelors">Bachelor's Degree</option>
+                                   
+                                    </select>
+                                </div>
+ 
+                                <div class="row">
+                                    <input type="text" class="editInput" placeholder="Occupation">
+                                    <input type="text" class="editAddress" placeholder="Employee Name">
+                                </div>
+
+                                <div class="row">
+                                    <input type="date" class="editInput" placeholder="Joined Date">
+                                    <input type="date" class="editInput" placeholder="Left Date">
+                                    <input type="text" class="editInput" placeholder="Salary / Month LKR">
+                                </div>
+
+                                <br>
+                                <br>
+                                <a href="">Add new section</a><br>
+                                <button type="submit">Next</button>
+                                <br><br><br><br><br>
+                                <a href="">Go Back</a>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+
+</html>

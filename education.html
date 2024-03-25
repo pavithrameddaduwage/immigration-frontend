@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education Level</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+        }
+
+        ::placeholder {
+            color: #C6C6C6;
+        }
+
+        .main {
+            margin-top: 70px;
+            margin-bottom: 55px;
+        }
+
+        .paraMain {
+            color: #163560;
+            text-align: center;
+            font-size: 40px;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .editClientBg {
+            border-radius: 24px;
+            background: #D9D9D9;
+            color: #C6C6C6;
+            width: 836px;
+            height: 376px;
+            flex-shrink: 0;
+            margin-left: auto;
+            margin-right: auto;
+            padding-top: 49px;
+        }
+
+        .formCenter {
+            text-align: center;
+        }
+
+        .editInput {
+            width: calc(33.33% - -98px);
+            height: 41px;
+            border-radius: 11px;
+            background: #EFEFEF;
+            border: none;
+            margin: 10px;
+            color: #C6C6C6;
+            padding: 0px 10px 0px 10px;
+            box-sizing: border-box;
+        }
+
+        select.editInput {
+            
+            height: 41px;
+            padding-left: 15px;
+            padding-right: 10px;
+            color: #C6C6C6;
+            background: #EFEFEF;
+            border-radius: 11px;
+            border: none;
+            border-right: 10px solid transparent;
+            margin: 10px;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .editAddress {
+            width: calc(100% - 20px);
+            height: 41px;
+            border-radius: 11px;
+            background: #EFEFEF;
+            border: none;
+            margin: 10px;
+            color: #C6C6C6;
+            padding: 0px 10px 0px 10px;
+            box-sizing: border-box;
+        }
+
+        button {
+            border-radius: 27px;
+            background: #1E4A6C;
+            width: 204px;
+            height: 43px;
+            margin-top: 29px;
+            color: #FFF;
+            text-align: center;
+            font-size: 16px;
+            font-weight: 400;
+            border-color: transparent;
+        }
+
+        .row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 0 10px;
+        }
+
+   
+        .form-label {
+            text-align: left;
+            padding-right: 10px;
+            flex-basis: 30%; 
+            color: #163560;
+            font-weight: 700;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <p class="paraMain">Brothers, Sisters, Sons and daughters.<br>Please include their Details</p>
+    </div>
+
+    <div class="editClientBg">
+        <div class="formCenter">
+            <form action="" style="margin-top: 20px; margin-left: 20px; margin-right: 20px;">
+
+                <div class="row">
+                    <label for="dutration" class="form-label">Duration</label>
+                    <input type="date" id="Duration" class="editInput" placeholder="Start">
+                    <input type="date" id="Duration" class="editInput" placeholder="End">
+                </div>
+
+                <div class="row">
+                    <label for="study" class="form-label">Field of Study</label>
+                    <input type="text" id="study" class="editAddress">
+                </div>
+
+                <div class="row">
+                    <label for="school" class="form-label">School or College Name</label>
+                    <input type="text" id="school" class="editAddress">
+                </div>
+
+                <div class="row">
+                    <label for="status" class="form-label">City and Country</label>
+                    <select id="status" name="status" class="editAddress">
+                        <option value="" disabled selected>Colombo, Sri Lanka</option>
+                        <option value="">Colombo, Sri Lanka</option>
+                        <option value="">Colombo, Sri Lanka</option>
+                        <option value="">Colombo, Sri Lanka</option>
+                    </select>
+                </div>
+
+                <button type="submit">Next</button>
+                <br><br><br><br><br>
+                <a href="">Go Back</a>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

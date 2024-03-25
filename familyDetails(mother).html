@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Family Details Mother</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+        }
+
+        ::placeholder {
+            color: #C6C6C6;
+        }
+
+        .main {
+            margin-top: 70px;
+            margin-bottom: 55px;
+        }
+
+        .paraMain {
+            color: #359D9E;
+            text-align: center;
+            font-size: 16px;
+            font-weight: 400;
+            margin: 0;
+        }
+
+        .editClientBg {
+            border-radius: 24px;
+            background: #D9D9D9;
+            color: #C6C6C6;
+            width: 836px;
+            height: 376px;
+            flex-shrink: 0;
+            margin-left: auto;
+            margin-right: auto;
+            padding-top: 49px;
+        }
+
+        .formCenter {
+            text-align: center;
+        }
+
+        .editInput {
+            width: calc(33.33% - 20px);
+            height: 41px;
+            border-radius: 11px;
+            background: #EFEFEF;
+            border: none;
+            margin: 10px;
+            color: #C6C6C6;
+            padding: 0px 10px 0px 10px;
+            box-sizing: border-box;
+        }
+
+        select {
+            width: calc(33.33% - 20px);
+            height: 41px;
+            padding-left: 15px;
+            padding-right: 10px;
+            color: #C6C6C6;
+            background: #EFEFEF;
+            border-radius: 11px;
+            border: none;
+            border-right: 10px solid transparent;
+            margin: 10px;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .editAddress {
+            width: calc(100% - 20px);
+            height: 41px;
+            border-radius: 11px;
+            background: #EFEFEF;
+            border: none;
+            margin: 10px;
+            color: #C6C6C6;
+            padding: 0px 10px 0px 10px;
+            box-sizing: border-box;
+        }
+
+        button {
+            border-radius: 27px;
+            background: #1E4A6C;
+            width: 204px;
+            height: 43px;
+            margin-top: 29px;
+            color: #FFF;
+            text-align: center;
+            font-size: 16px;
+            font-weight: 400;
+            border-color: transparent;
+        }
+
+        /* Added styling for the 3-field format */
+        .row {
+            display: flex;
+            justify-content: space-between;
+            margin: 0 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <p class="paraMain" style="color: #163560; font-weight: 700; font-size: 40px;">Family details of Principal
+            Applicant</p>
+        <p class="paraMain">Mother</p>
+    </div>
+
+    <div class="editClientBg">
+        <div class="formCenter">
+            <form action="" style="margin-top:20px; margin-left: 20px;margin-right: 20px;">
+                <!-- First Row -->
+                <div class="row">
+                    <input type="text" class="editAddress" placeholder="Name">
+                </div>
+
+                <!-- Second Row -->
+                <div class="row">
+                    <input type="date" class="editInput" placeholder="Date of birth">
+                    <input type="date" class="editInput" placeholder="If deceased date">
+                    <select name="If deceased city" class="editInput">
+                        <option value="disabled selected">If deceased city</option>
+                        <option value="town">Town</option>
+                        <option value="town">Town</option>
+                        <option value="town">Town</option>
+                        <option value="town">Town</option>
+                    </select>
+                </div>
+
+                <!-- Third Row -->
+                <div class="row">
+                    <select name="country" class="editInput">
+                        <option value="" disabled selected>Country of birth</option>
+                        <option value="Canada">Canada</option>
+                        <option value="Australia">Australia</option>
+                        <option value="UK">UK</option>
+                        <option value="Malaysia">Malaysia</option>
+                    </select>
+                    <input type="text" class="editInput" placeholder="Current Address">
+                    <input type="text" class="editInput" placeholder="Occupation">
+                </div>
+                <br>
+                <br>
+
+                <!-- Button and Link -->
+                <button class="mb-5" type="submit">Next</button>
+                <br><br><br><br><br>
+                <a href="your-customer-list-url">Go Back</a>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
